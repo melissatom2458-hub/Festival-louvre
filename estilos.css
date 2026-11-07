@@ -85,17 +85,15 @@ header {
 /********************************/
 /*estilos para body de la página*/
 /********************************/
-.secciones {/*caracteristicas elementos en contenedor con la clase menu-container*/
-  	display: flex; /*tipo de layout felxbox*/
-  	flex-direction: column; /*rederizara/dibujara los items/elementos hijos en el layout 
-  	como una columna, un contenedor o un item sobre el otro */
-  	padding-left: 10%; /*hago un espacio a la izquierda al interior del contenedor header de 10% del ancho del viewport*/
-    padding-right: 10%; /*hago un espacio a la derecha al interior del contenedor header de 10% del ancho del viewport*/
+.secciones {
+ 	display: flex;
+ 	flex-direction: column;
+ 	padding-left: 10%;
+    padding-right: 10%;
 }
 .texto-secc {
-	display: flex; /*sera un elemento/item de tipo flex*/
-	flex-direction: column; /*rederizara/dibujara los items/elementos hijos en el layout 
-  	como una columna, un contenedor o un item sobre el otro */
+	display: flex;
+	flex-direction: column;
 }
 .texto-secc h1{
 	display: block;
@@ -104,117 +102,96 @@ header {
 	margin-bottom: 20px;
 	font-size: 2.5rem;
 	color: #01067b;
-	letter-spacing: 2px;  /*espacio entre letras */
+	letter-spacing: 2px;
 }
 .texto-secc p{
 	font-size: 21px;
 	display: block;
 	margin-top: 15px;
-	line-height: 1.7; /* más espacio entre líneas para mejor lectura */
-
+	line-height: 1.7;
 }
 .contenedor-imagen {
-  	display: flex; /*sera un elemento/item de tipo flex*/
-  	flex-direction: column;
-  	align-items: center;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+    text-align: center;
 }
 .imgs-secc-1{
-	display: flex; /*sera un elemento/item de tipo flex*/
-  	flex-direction: column;
-  	align-items: center; 
+	display: flex;
+ 	flex-direction: column;
+ 	align-items: center; 
 }
-.par-imgs-escritorio{/*caracteristicas elementos en contenedor con la clase secciones*/
-	/*border: 5px solid #555;  /* For debugging */
-	width: 65%; /*ancho que tendra el contenedor con clase menu*/
-	display: flex; /*sera un elemento/item de tipo flex*/
-	justify-content: space-around; /*defino la alineación horizontal de los items hijos diciendo
-	cuando hay mas de uno distribuya el esapcio restante entre los espacios de cada elemento/item*/
+.par-imgs-escritorio{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 .par-imgs-escritorio img{
-	width: 50%;
-	display: flex; /*sera un elemento/item de tipo flex*/
+	display: block;
+	width: 100%;
+	max-width: 550px; /*Tamaño del cartel*/
+	height: auto;
+	transition: 200ms;
+	margin: 0 auto;
 }
 .par-imgs-escritorio img:hover{
-  transform: scale(1.03);
-  transition: 200ms;
+	transform: scale(1.03);
+	transition: 200ms;
 }
 .par-imgs-escritorio p{
-	width: 40%;
+	width: 80%;
 	font-size: 16pt;
-	font-style: italic;
+	font-style: normal;
 	text-align: center;
-	display: flex; /*sera un elemento/item de tipo flex*/
+	display: block;
+	margin-top: 15px;
 }
-.par-imgs-mobile{/*caracteristicas elementos en contenedor con la clase secciones*/
-	display: none;
-}
-.par-imgs-mobile img{
-	display: none;
-}
-.par-imgs-mobile p{
-	display: none;
-}
+
 /**media query cuando ancho es menor o igual a 700px**/
 @media screen and (max-width: 700px) {
 	.texto-secc p{
 		font-size: 14pt;
 	}
-	.par-imgs-escritorio{/*caracteristicas elementos en contenedor con la clase secciones*/
-		display: none;
+	.par-imgs-escritorio{
+		display: none; /*Par ocultar la versión de PC en celulares*/
 	}
-	.par-imgs-escritorio img{
-		display: none;
-	}
-	.par-imgs-escritorio img:hover{
-	 	display: none;
-	}
-	.par-imgs-escritorio p{
-		display: none;
-	}
-	.par-imgs-mobile{/*caracteristicas elementos en contenedor con la clase secciones*/
-		/*border: 5px solid #555;  /* For debugging */
-		width: 100%; /*ancho que tendra el contenedor con clase menu*/
-  		display: flex; /*sera un elemento/item de tipo flex*/
-  		flex-direction: column;
-  		align-items: center; 
+	
+	/* Versión para celular limpia y controlada */
+	.par-imgs-mobile{
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center; 
 	}
 	.par-imgs-mobile img{
+		display: block;
 		width: 100%;
+		max-width: 290px; /*Tamaño para celular */
+		height: auto;
 		transition: 200ms;
-		display: flex; /*sera un elemento/item de tipo flex*/
+		margin: 0 auto;
 	}
 	.par-imgs-mobile img:hover{
 	 	transform: scale(1.03);
-  		transition: 200ms;
+		transition: 200ms;
 	}
-	.par-imgs-mobile p{
-		width: 100%;
-		font-size: 12pt;
-		font-style: italic;
-		text-align: center;
-		display: flex; /*sera un elemento/item de tipo flex*/
-	}
- }
-.contenedor-imagen img{
-	display: flex; /*sera un elemento/item de tipo flex*/
-	width: 50%;
+}
+
+.contenedor-imagen img,
+.contenedor-imagen-secc4 img {
+	display: block;
+	width: 100%;
+	max-width: 350px; /*Tamño de los códigos QR */
+	height: auto;
 	transition: 200ms;
+	margin: 0 auto;
 }
-.contenedor-imagen img:hover{
-  transform: scale(1.03);
-  transition: 200ms;
-}
-.contenedor-imagen p{
-	width: 50%;
-	text-align: center;
-	font-size: 16pt;
-	font-style: italic;
-	display: flex; /*sera un elemento/item de tipo flex*/
-}
+
 /**media query cuando ancho es menor o igual a 700px**/
 @media screen and (max-width: 700px){
 	.contenedor-imagen img{
-		width: 100%;
+		width: 90%;
 		transition: 200ms;
 	}
 	.contenedor-imagen p{
@@ -222,31 +199,36 @@ header {
 		font-size: 12pt;
 	}
 }
+
 .contenedor-imagen-secc4{
 	display: flex;
-  	flex-direction: column;
-  	align-items: center;
+	flex-direction: column;
+	align-items: center;
 }
 .contenedor-imagen-secc4 p{
 	width: 80%;
 	text-align: center;
 	font-size: 16pt;
 	display: block; 
-	font-style: normal; /* Sin cursiva */
+	font-style: normal; /*Quite la cursiva*/
 	margin-top: 15px; 
 }
+
+/* De la imagen 3, 4 qr para no confundirme*/
+.contenedor-imagen img,
 .contenedor-imagen-secc4 img{
 	display: block; 
 	width: 100%;         
-	max-width: 500px;   /* Para que no mida más de 500px de ancho */
-	height: auto;       /* Mantiene la proporción */
+	max-width: 320px; /*Tamaño igual */
+	height: auto;        
 	transition: 200ms;
 	margin: 0 auto;     
 }
+.contenedor-imagen img:hover,
 .contenedor-imagen-secc4 img:hover{
   transform: scale(1.03);
-  transition: 200ms;
-}
+  transition: 200ms;}
+
 /**media query cuando ancho es menor o igual a 700px**/
 @media screen and (max-width: 700px){
 	.contenedor-imagen-secc4 p{
@@ -255,7 +237,7 @@ header {
 	}
 	.contenedor-imagen-secc4 img{
 		display: block; 
-		width: 90%; /* En celular se hace casi al 100% */
+		width: 90%; 
 		transition: 200ms;
 	}
 }
@@ -270,7 +252,7 @@ header {
 /*estilos para footer de la página*/
 /**********************************/
 footer {
-  	background-color: white;/*color fondo pie de pagina*/
+  	background-color: #e8ebff;/*color fondo pie de pagina Cambie el color*/
   	margin-top: 40px;
   	box-shadow: 0px 1px 8px grey;
   	display: flex; /*sera un elemento/item de tipo flex*/
