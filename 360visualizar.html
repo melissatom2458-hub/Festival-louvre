@@ -1,0 +1,20 @@
+360visualizar.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visor 360 Louvre</title>
+    <!-- Esta línea llama a la librería A-Frame -->
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+</head>
+<body>
+    <!-- Aquí declaramos la imagen 360 que subimos a Postimages -->
+    <a-assets>
+        <img id="MiSky" crossorigin src="https://i.postimg.cc/qRpBw7QW/Museo-del-Louvre-Street-View-360.jpg">
+    </a-assets>
+
+    <!-- Aquí creamos la escena y el cielo esférico -->
+    <a-scene>
+        <a-sky src="#MiSky"></a-sky>
+    </a-scene>
+</body>
+</html>
